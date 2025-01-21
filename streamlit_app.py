@@ -4,7 +4,7 @@ from PIL import Image
 st.set_page_config(page_title="Portfolio", page_icon="🌟", layout="wide")
 
 try:
-    shared_img = Image.open("pic.jpg")
+    shared_img = Image.open("![Image](https://github.com/user-attachments/assets/ddf461ef-3ae4-4b21-9d67-83e08a8ccc8b)")
 except FileNotFoundError:
     st.error("Profile picture file not found. Please ensure 'pic.jpg' exists in your working directory.")
     shared_img = None
@@ -47,7 +47,7 @@ def projects_content():
         st.write("- Tools: Python, Pandas, Matplotlib, Seaborn.")
         st.write("- Focus: Exploratory Data Analysis and Data Visualization.")
         try:
-            project_img = Image.open("crimeimag.jpeg",) 
+            project_img = Image.open("![Image](https://github.com/user-attachments/assets/0245fd75-3f87-4e33-9183-569b969e242d)",) 
             st.image(project_img, caption="Project Visualization", use_column_width=True)
         except FileNotFoundError:
             st.write("Project image not found. Add an image named 'project.jpg' to display here.")
@@ -59,7 +59,7 @@ def projects_content():
         st.write("- Features: Account creation, fund transfer, balance inquiry.")
         st.write("- Tools: Python, OOP concepts.")
         try:
-            project_img = Image.open("bankimag.jpeg") 
+            project_img = Image.open("![Image](https://github.com/user-attachments/assets/ccece498-9976-4780-bfb3-874f7ed3dcc9)") 
             st.image(project_img, caption="Project Visualization", use_column_width=True)
         except FileNotFoundError:
             st.write("Project image not found. Add an image named 'project.jpg' to display here.")
@@ -93,6 +93,6 @@ elif page == "Skills":
     skills_content()
 elif page == "Contact":
     contact_content()
-![Image](https://github.com/user-attachments/assets/ddf461ef-3ae4-4b21-9d67-83e08a8ccc8b)
-![Image](https://github.com/user-attachments/assets/0245fd75-3f87-4e33-9183-569b969e242d)
-![Image](https://github.com/user-attachments/assets/ccece498-9976-4780-bfb3-874f7ed3dcc9)
+
+
+
