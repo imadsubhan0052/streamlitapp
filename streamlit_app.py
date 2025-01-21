@@ -1,22 +1,23 @@
 import streamlit as st
 from PIL import Image
-import requests
-from io import BytesIO
 
 st.set_page_config(page_title="Portfolio", page_icon="🌟", layout="wide")
 
-# Load and Prepare Image from GitHub
-shared_img_url = "https://raw.githubusercontent.com/imadsubhan/streamlit_app.py/main/pic.jpg"
-
-response = requests.get(shared_img_url)
-shared_img = Image.open(BytesIO(response.content))
+try:
+    shared_img = Image.open("pic.jpg")
+except FileNotFoundError:
+    st.error("Profile picture file not found. Please ensure 'pic.jpg' exists in your working directory.")
+    shared_img = None
 
 page = st.sidebar.radio("Navigate", ["Home", "About", "Projects", "Skills", "Contact"])
 
 def home_layout():
     col1, col2 = st.columns([1, 3])
     with col1:
-        st.image(shared_img, width=150, use_column_width=False, caption="Imad Subhan")
+        if shared_img:
+            st.image(shared_img, width=150, use_column_width=False, caption="Imad Subhan")
+        else:
+            st.write("")
     with col2:
         home_content()
 
