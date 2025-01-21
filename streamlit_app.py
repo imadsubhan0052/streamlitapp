@@ -15,7 +15,7 @@ def home_layout():
     col1, col2 = st.columns([1, 3])
     with col1:
         if shared_img:
-            st.image(shared_img, width=200, use_container_width=False, caption="Imad Subhan")
+            st.image(shared_img, width=150, use_container_width=False, caption="Imad Subhan")
         else:
             st.write("")
     with col2:
