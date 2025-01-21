@@ -93,3 +93,6 @@ elif page == "Skills":
     skills_content()
 elif page == "Contact":
     contact_content()
+![Image](https://github.com/user-attachments/assets/ddf461ef-3ae4-4b21-9d67-83e08a8ccc8b)
+![Image](https://github.com/user-attachments/assets/0245fd75-3f87-4e33-9183-569b969e242d)
+![Image](https://github.com/user-attachments/assets/ccece498-9976-4780-bfb3-874f7ed3dcc9)
