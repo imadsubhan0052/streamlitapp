@@ -1,23 +1,22 @@
 import streamlit as st
 from PIL import Image
+import requests
+from io import BytesIO
 
 st.set_page_config(page_title="Portfolio", page_icon="🌟", layout="wide")
 
-try:
-    shared_img = Image.open(""https://raw.githubusercontent.com/imadsubhan0052/streamlit_app.py/main/pic.jpg"")
-except FileNotFoundError:
-    st.error("Profile picture file not found. Please ensure 'pic.jpg' exists in your working directory.")
-    shared_img = None
+# Load and Prepare Image from GitHub
+shared_img_url = "https://raw.githubusercontent.com/imadsubhan/streamlit_app.py/main/pic.jpg"
+
+response = requests.get(shared_img_url)
+shared_img = Image.open(BytesIO(response.content))
 
 page = st.sidebar.radio("Navigate", ["Home", "About", "Projects", "Skills", "Contact"])
 
 def home_layout():
     col1, col2 = st.columns([1, 3])
     with col1:
-        if shared_img:
-            st.image(shared_img, width=150, use_column_width=False, caption="Imad Subhan")
-        else:
-            st.write("")
+        st.image(shared_img, width=150, use_column_width=False, caption="Imad Subhan")
     with col2:
         home_content()
 
@@ -47,7 +46,7 @@ def projects_content():
         st.write("- Tools: Python, Pandas, Matplotlib, Seaborn.")
         st.write("- Focus: Exploratory Data Analysis and Data Visualization.")
         try:
-            project_img = Image.open("![Image](https://github.com/user-attachments/assets/0245fd75-3f87-4e33-9183-569b969e242d)",) 
+            project_img = Image.open("crimeimag.jpeg",) 
             st.image(project_img, caption="Project Visualization", use_column_width=True)
         except FileNotFoundError:
             st.write("Project image not found. Add an image named 'project.jpg' to display here.")
@@ -59,7 +58,7 @@ def projects_content():
         st.write("- Features: Account creation, fund transfer, balance inquiry.")
         st.write("- Tools: Python, OOP concepts.")
         try:
-            project_img = Image.open("![Image](https://github.com/user-attachments/assets/ccece498-9976-4780-bfb3-874f7ed3dcc9)") 
+            project_img = Image.open("bankimag.jpeg") 
             st.image(project_img, caption="Project Visualization", use_column_width=True)
         except FileNotFoundError:
             st.write("Project image not found. Add an image named 'project.jpg' to display here.")
@@ -93,6 +92,3 @@ elif page == "Skills":
     skills_content()
 elif page == "Contact":
     contact_content()
-
-
-
