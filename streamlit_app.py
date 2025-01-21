@@ -15,7 +15,7 @@ def home_layout():
     col1, col2 = st.columns([1, 3])
     with col1:
         if shared_img:
-            st.image(shared_img, width=200, use_column_width=False, caption="Imad Subhan")
+            st.image(shared_img, width=200, use_container_width=False, caption="Imad Subhan")
         else:
             st.write("")
     with col2:
@@ -48,7 +48,7 @@ def projects_content():
         st.write("- Focus: Exploratory Data Analysis and Data Visualization.")
         try:
             project_img = Image.open("crimeimag.jpeg",) 
-            st.image(project_img, caption="Project Visualization", use_column_width=300)
+            st.image(project_img, caption="Project Visualization", use_container_width=300)
         except FileNotFoundError:
             st.write("Project image not found. Add an image named 'project.jpg' to display here.")
         
@@ -60,7 +60,7 @@ def projects_content():
         st.write("- Tools: Python, OOP concepts.")
         try:
             project_img = Image.open("bankimag.jpeg") 
-            st.image(project_img, caption="Project Visualization", use_column_width=300)
+            st.image(project_img, caption="Project Visualization", use_container_width=300)
         except FileNotFoundError:
             st.write("Project image not found. Add an image named 'project.jpg' to display here.")
 
