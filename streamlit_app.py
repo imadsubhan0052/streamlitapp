@@ -4,7 +4,7 @@ from PIL import Image
 st.set_page_config(page_title="Portfolio", page_icon="🌟", layout="wide")
 
 try:
-    shared_img = Image.open("https://github.com/imadsubhan0052/assets/100d69b0-3cfc-4bed-b498-9dfad8f8b650")
+    shared_img = Image.open(""https://raw.githubusercontent.com/imadsubhan0052/streamlit_app.py/main/pic.jpg"")
 except FileNotFoundError:
     st.error("Profile picture file not found. Please ensure 'pic.jpg' exists in your working directory.")
     shared_img = None
